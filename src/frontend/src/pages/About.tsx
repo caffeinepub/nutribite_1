@@ -3,32 +3,22 @@ import { motion } from "motion/react";
 
 const teamMembers = [
   {
-    name: "Aditya Kumar",
+    name: "Kallangouda B",
     role: "Co-Founder & CEO",
-    initials: "AK",
+    initials: "KB",
     bg: "bg-deep-green",
-    desc: "Food tech enthusiast and MBA student at IIM Bangalore. Passionate about sustainable food systems.",
+    photo:
+      "/assets/28cbe2c8-6f9b-4292-8675-85e86d510f00-019d428f-0d1e-718b-960b-f06dad84bfe6.jpeg",
+    desc: "Food tech enthusiast and entrepreneur from Bengaluru. Passionate about sustainable food systems and making millets mainstream.",
   },
   {
-    name: "Sneha Patel",
+    name: "Manamohan K.H",
     role: "Co-Founder & Product Head",
-    initials: "SP",
+    initials: "MK",
     bg: "bg-brown",
-    desc: "Nutrition science graduate from NIMHANS. Designs every NutriBite recipe for taste and health.",
-  },
-  {
-    name: "Arjun Nair",
-    role: "Co-Founder & Tech Lead",
-    initials: "AN",
-    bg: "bg-sage",
-    desc: "B.Tech from RVCE Bengaluru. Builds the tech stack and supply chain systems that power NutriBite.",
-  },
-  {
-    name: "Kavya Reddy",
-    role: "Co-Founder & Marketing",
-    initials: "KR",
-    bg: "bg-amber-700",
-    desc: "Journalism and media graduate who tells the NutriBite story across India and beyond.",
+    photo:
+      "/assets/1c6bd813-5db9-4af8-83ef-f5618e775f15_original-019d4293-9768-705d-bdc6-753c3bbfd885.jpeg",
+    desc: "Nutrition and product development expert. Designs every NutriBite recipe to deliver the perfect balance of taste and health.",
   },
 ];
 
@@ -81,8 +71,8 @@ export default function About() {
               Our Story
             </h1>
             <p className="text-cream/75 text-xl max-w-2xl mx-auto leading-relaxed">
-              Four students from Bengaluru on a mission to make healthy snacking
-              accessible, delicious, and sustainable for every Indian.
+              Two entrepreneurs from Bengaluru on a mission to make healthy
+              snacking accessible, delicious, and sustainable for every Indian.
             </p>
           </motion.div>
         </div>
@@ -102,35 +92,36 @@ export default function About() {
             </h2>
             <div className="space-y-5 text-foreground/80 leading-relaxed">
               <p>
-                In 2023, four final-year students at Bengaluru universities —
-                united by a common frustration. The healthy snack options in
-                India were either tasteless, unaffordable, or full of artificial
-                ingredients. Meanwhile, India's ancient millets — ragi, jowar,
-                bajra — sat largely unused in pantries, dismissed as "village
-                food."
+                In 2023, Kallangouda B and Manamohan K.H — two entrepreneurs
+                from Bengaluru — were united by a common frustration. The
+                healthy snack options in India were either tasteless,
+                unaffordable, or full of artificial ingredients. Meanwhile,
+                India's ancient millets — ragi, jowar, bajra — sat largely
+                unused in pantries, dismissed as "village food."
               </p>
               <p>
-                We started NutriBite in a small kitchen in Koramangala with one
-                goal:{" "}
+                They started NutriBite in a small kitchen in Koramangala with
+                one goal:{" "}
                 <strong>
                   make millets the coolest, tastiest snack in India.
                 </strong>{" "}
-                We experimented with dozens of recipes, tweaking spice blends
-                and baking techniques until we created chips and puffs that
+                They experimented with dozens of recipes, tweaking spice blends
+                and baking techniques until they created chips and puffs that
                 rivalled the best conventional snacks — but with a fraction of
                 the oil and none of the harmful additives.
               </p>
               <p>
-                We launched at a college fest in March 2023 and sold out within
-                two hours. The response was overwhelming. By August 2023, we had
-                our FSSAI license, a manufacturing partnership in Peenya
-                Industrial Area, and orders coming in from across Karnataka.
+                They launched at a college fest in March 2023 and sold out
+                within two hours. The response was overwhelming. By August 2023,
+                they had their FSSAI license, a manufacturing partnership in
+                Peenya Industrial Area, and orders coming in from across
+                Karnataka.
               </p>
               <p>
-                Today, NutriBite ships to over 50 cities across India. We work
+                Today, NutriBite ships to over 50 cities across India. They work
                 directly with 30+ millet farmers in the Dharwad district, paying
-                fair prices that support rural livelihoods while ensuring we get
-                the freshest, highest-quality ingredients for our snacks.
+                fair prices that support rural livelihoods while ensuring the
+                freshest, highest-quality ingredients for every snack.
               </p>
             </div>
           </motion.div>
@@ -179,10 +170,10 @@ export default function About() {
               Meet the Founders
             </h2>
             <p className="text-muted-foreground mt-3">
-              The passionate student entrepreneurs behind every NutriBite snack
+              The passionate entrepreneurs behind every NutriBite snack
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {teamMembers.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -193,13 +184,21 @@ export default function About() {
                 className="bg-white rounded-2xl p-6 shadow-card text-center"
                 data-ocid={`about.item.${i + 1}`}
               >
-                <div
-                  className={`w-20 h-20 ${member.bg} rounded-full flex items-center justify-center mx-auto mb-4`}
-                >
-                  <span className="text-2xl font-bold text-white">
-                    {member.initials}
-                  </span>
-                </div>
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+                  />
+                ) : (
+                  <div
+                    className={`w-20 h-20 ${member.bg} rounded-full flex items-center justify-center mx-auto mb-4`}
+                  >
+                    <span className="text-2xl font-bold text-white">
+                      {member.initials}
+                    </span>
+                  </div>
+                )}
                 <h3 className="font-serif font-semibold text-lg">
                   {member.name}
                 </h3>
